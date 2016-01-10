@@ -1,0 +1,42 @@
+{
+  "name": "freecell",
+  "description": "freecell",
+  "version": "0.0.0",
+  "author": {
+    "name": "bouzuya",
+    "email": "m@bouzuya.net",
+    "url": "http://bouzuya.net"
+  },
+  "bugs": {
+    "url": "https://github.com/bouzuya/freecell/issues"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "espower-babel": "^4.0.1",
+    "mocha": "^2.3.4",
+    "power-assert": "^1.2.0",
+    "tsd": "^0.6.5",
+    "typescript": "^1.7.5"
+  },
+  "homepage": "https://github.com/bouzuya/freecell#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouzuya/freecell"
+  },
+  "scripts": {
+    "build": "tsc && npm run build-es2015",
+    "build-es2015": "babel --presets es2015 --out-dir lib/ .tmp/src/",
+    "clean": "rm -rf lib/ .tmp/",
+    "start": "npm run clean && npm run build && node examples/index.js",
+    "test": "npm run clean && tsc && mocha --require test/espower-babel-loader.js .tmp/test/",
+    "tsd": "tsd reinstall"
+  }
+}
