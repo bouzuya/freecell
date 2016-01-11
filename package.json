@@ -35,8 +35,8 @@
     "build": "tsc && npm run build-es2015",
     "build-es2015": "babel --presets es2015 --out-dir lib/ .tmp/src/",
     "clean": "rm -rf lib/ .tmp/",
-    "start": "npm run clean && npm run build && node examples/index.js",
-    "test": "npm run clean && tsc && mocha --require test/espower-babel-loader.js .tmp/test/",
-    "tsd": "tsd reinstall"
+    "prepublish": "tsd reinstall && npm run clean && npm run build",
+    "start": "node examples/index.js",
+    "test": "npm run clean && tsc && mocha --require test/espower-babel-loader.js .tmp/test/"
   }
 }
