@@ -6,6 +6,7 @@ A freecell written in TypeScript.
 
 ```
 $ git clone https://github.com/bouzuya/freecell
+$ cd freecell/
 $ npm install
 $ npm start
 ```
